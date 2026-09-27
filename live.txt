@@ -102,10 +102,13 @@ CHC家庭影院,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=chcjt
 天津都市,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv4
 
 Unifi测试,#genre#
-TV1,https://v-t-e-r.github.io/Umbrella/Playlist/Ch/101.m3u8
-TV2,https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/chunklist_b2596000_slENG.m3u8?id=2
-TV3,https://live-streams-ssai-01.tonton.com.my/live/2dd2b7cd-1b34-4871-b669-57b5c9beca23/live.isml/live-audio_0=64000-video=3000000.m3u8
-TV3备用,http://tonton-live-switch-ssar.akamaized.net/stream-tv3/master.m3u8?bpkio_serviceid=6c0958d82a830a02ca0936d9cfab8311
-TV OKEY,https://d25tgymtnqzu8s.cloudfront.net/smil:okey/chunklist_b2596000_slENG.m3u8?id=3
-TV6,https://v-t-e-r.github.io/Umbrella/Playlist/Ch/TV6rtm.m3u8
-Berita RTM,https://v-t-e-r.github.io/Umbrella/Playlist/Ch/Beritartm.m3u8
+TV1测试,http://50.7.161.82:8278/streams/d/TV1/playlist.m3u8
+TV2测试,http://50.7.161.82:8278/streams/d/TV2/playlist.m3u8
+TV3测试,http://50.7.161.82:8278/streams/d/TV3/playlist.m3u8
+8TV测试,http://50.7.161.82:8278/streams/d/TV8/playlist.m3u8
+TV9测试,http://50.7.161.82:8278/streams/d/TV9/playlist.m3u8
+Bernama测试,http://50.7.161.82:8278/streams/d/Bernama/playlist.m3u8
+Astro Awani测试,http://50.7.161.82:8278/streams/d/Awani/playlist.m3u8
+Astro Ceria测试,http://50.7.161.82:8278/streams/d/Ceria/playlist.m3u8
+Astro Citra测试,http://50.7.161.82:8278/streams/d/Citra/playlist.m3u8
+Astro 双星测试,http://50.7.161.82:8278/streams/d/Shuangxing/playlist.m3u8
