@@ -102,8 +102,10 @@ CHC家庭影院,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=chcjt
 天津都市,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv4
 
 Unifi测试,#genre#
-Dunia Sinema 1080FHD,https://unifi-live01.secureswiftcontent.com/UnifiHD/live27-1080FHD.m3u8
-DidikTV KPM,https://raw.githubusercontent.com/MIFNtechnology/siaranMy/main/channels/DidikTvKPM/index.m3u8
-TV IKIM,https://edge-sg1.vediostream.com/abr/tvikim/live/tvikim_source/chunks.m3u8
-Astro Awani,https://d2idp3hzkhjpih.cloudfront.net/out/v1/4b85d9c2bf97413eb0c9fd875599b837/index_3.m3u8
-TVS,https://agsplayback01.astro.com.my:443/CH1/master_AGS_TVS_04.m3u8
+TV1,https://v-t-e-r.github.io/Umbrella/Playlist/Ch/101.m3u8
+TV2,https://d25tgymtnqzu8s.cloudfront.net/smil:tv2/chunklist_b2596000_slENG.m3u8?id=2
+TV3,https://live-streams-ssai-01.tonton.com.my/live/2dd2b7cd-1b34-4871-b669-57b5c9beca23/live.isml/live-audio_0=64000-video=3000000.m3u8
+TV3备用,http://tonton-live-switch-ssar.akamaized.net/stream-tv3/master.m3u8?bpkio_serviceid=6c0958d82a830a02ca0936d9cfab8311
+TV OKEY,https://d25tgymtnqzu8s.cloudfront.net/smil:okey/chunklist_b2596000_slENG.m3u8?id=3
+TV6,https://v-t-e-r.github.io/Umbrella/Playlist/Ch/TV6rtm.m3u8
+Berita RTM,https://v-t-e-r.github.io/Umbrella/Playlist/Ch/Beritartm.m3u8
