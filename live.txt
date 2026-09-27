@@ -81,34 +81,3 @@ CHC家庭影院,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=chcjt
 嘉佳卡通,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdjjkt
 欢笑剧场,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hxjchd
 都市剧场,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=dsjchd
-
-地方频道,#genre#
-湖北垄上,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbls
-湖北影视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbys
-湖北教育,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbjy
-湖北生活,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbty
-湖北经视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbjs
-湖北综合,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hbzh
-广东新闻,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdxw
-广东珠江,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdzja
-广东珠江备用,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gdzj
-辽宁北方,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnbf
-辽宁影视,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnys
-辽宁生活,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnsh
-辽宁都市,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=lnds
-广西新闻,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=gxxw
-天津文艺,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv2
-天津新闻,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv1
-天津都市,http://63.141.230.178:82/gslb/zbdq5.m3u8?id=tjtv4
-
-Unifi测试,#genre#
-TV1测试,http://50.7.161.82:8278/streams/d/TV1/playlist.m3u8
-TV2测试,http://50.7.161.82:8278/streams/d/TV2/playlist.m3u8
-TV3测试,http://50.7.161.82:8278/streams/d/TV3/playlist.m3u8
-8TV测试,http://50.7.161.82:8278/streams/d/TV8/playlist.m3u8
-TV9测试,http://50.7.161.82:8278/streams/d/TV9/playlist.m3u8
-Bernama测试,http://50.7.161.82:8278/streams/d/Bernama/playlist.m3u8
-Astro Awani测试,http://50.7.161.82:8278/streams/d/Awani/playlist.m3u8
-Astro Ceria测试,http://50.7.161.82:8278/streams/d/Ceria/playlist.m3u8
-Astro Citra测试,http://50.7.161.82:8278/streams/d/Citra/playlist.m3u8
-Astro 双星测试,http://50.7.161.82:8278/streams/d/Shuangxing/playlist.m3u8
