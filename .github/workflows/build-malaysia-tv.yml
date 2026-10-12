@@ -32,13 +32,11 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      # GitHub-hosted Ubuntu runners already include Android SDK command-line tools.
-      # Avoid the obsolete `sdkmanager tools` package requested by setup-android@v3.
-
-      - name: Install SDK platform
-        run: |
-          echo "ANDROID_HOME=/usr/local/lib/android/sdk" >> "$GITHUB_ENV"
-          /usr/local/lib/android/sdk/cmdline-tools/16.0/bin/sdkmanager --install "platforms;android-36" "build-tools;36.0.0"
+      - name: Set up Android SDK with supported packages
+        uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools platforms;android-36 build-tools;36.0.0"
+          log-accepted-android-sdk-licenses: false
 
       - name: Apply Malaysia IPTV customization
         run: |
