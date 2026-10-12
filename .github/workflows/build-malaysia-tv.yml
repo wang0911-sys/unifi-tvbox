@@ -1,0 +1,99 @@
+name: Build Malaysia Live TV APK
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'android-app/**'
+      - '.github/workflows/build-malaysia-tv.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-malaysia-apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout your Malaysia IPTV repository
+        uses: actions/checkout@v4
+
+      - name: Fetch GPL-3.0 TV Live historical source
+        run: |
+          git clone --depth 1 --branch beta https://github.com/sakana164/mytv_android.git mytv_source
+          cd mytv_source
+          git fetch --depth 1 origin fc78a7f392f1552826c0bb2b06c8a817a4dd16ef
+          git checkout --detach fc78a7f392f1552826c0bb2b06c8a817a4dd16ef
+
+      - name: Set up Android Java toolchain
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK platform
+        run: sdkmanager --install "platforms;android-36" "build-tools;36.0.0"
+
+      - name: Apply Malaysia IPTV customization
+        run: |
+          cd mytv_source
+          python3 ../android-app/patch_malaysia.py
+          chmod +x gradlew
+
+      - name: Generate temporary APK signing certificate
+        run: |
+          keytool -genkeypair -noprompt -v \
+            -keystore "$GITHUB_WORKSPACE/malaysia-signing.jks" \
+            -alias malaysia -storepass "tempUnifiApk2026" -keypass "tempUnifiApk2026" \
+            -keyalg RSA -keysize 2048 -validity 3650 \
+            -dname "CN=Malaysia Community Live TV,O=Community IPTV,C=MY"
+          echo "KEYSTORE=$GITHUB_WORKSPACE/malaysia-signing.jks" >> "$GITHUB_ENV"
+          echo "KEYSTORE_PASSWORD=tempUnifiApk2026" >> "$GITHUB_ENV"
+          echo "KEY_ALIAS=malaysia" >> "$GITHUB_ENV"
+          echo "KEY_PASSWORD=tempUnifiApk2026" >> "$GITHUB_ENV"
+
+      - name: Compile installable universal Android APK
+        working-directory: mytv_source
+        env:
+          VERSION_CODE: '1'
+        run: |
+          ./gradlew :tv:assembleOriginalDebug --no-daemon --stacktrace
+          mkdir -p ../artifacts
+          find tv/build/outputs -type f -name '*.apk' -print
+          APK="$(find tv/build/outputs/apk/original/debug -type f -name '*all*.apk' | head -n 1)"
+          if [ -z "$APK" ]; then
+            APK="$(find tv/build/outputs/apk/original/debug -type f -name '*.apk' | head -n 1)"
+          fi
+          test -n "$APK"
+          cp "$APK" ../artifacts/Malaysia-Live-TV.apk
+          sha256sum ../artifacts/Malaysia-Live-TV.apk | tee ../artifacts/SHA256.txt
+
+      - name: Upload APK to GitHub Actions
+        uses: actions/upload-artifact@v4
+        with:
+          name: Malaysia-Live-TV-APK
+          path: artifacts/*
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Publish public APK download (GitHub Release)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: malaysia-live-tv-v1
+          name: Malaysia Live TV - Unifi preset (v1)
+          body: |
+            Unofficial community build based on GPL-3.0 historical
+            https://github.com/sakana164/mytv_android
+            Source customization: android-app/patch_malaysia.py
+            Default playlist: https://raw.githubusercontent.com/wang0911-sys/unifi-tvbox/main/live.txt
+
+            The preset contains third-party playlist addresses; availability is not guaranteed.
+            This build uses a temporary signing certificate. An update built with a different
+            certificate might require uninstalling the previous APK first.
+          prerelease: true
+          files: artifacts/Malaysia-Live-TV.apk
+          fail_on_unmatched_files: true
